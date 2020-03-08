@@ -1,6 +1,5 @@
 package com.xiao.deng.leetcode.Sequence;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.ArrayList;
 import java.util.List;
 
