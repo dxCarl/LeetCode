@@ -22,7 +22,7 @@ ext {
         geb: "2.3.1",
         groovy: "2.5.6",
         htmlunitDriver: "2.33.3",
-        jackson: "2.9.6",
+        jackson: "2.9.10.3",
         json: "1.1.2",
         selenium: "3.141.59",
         servletApi: "3.0.1",
