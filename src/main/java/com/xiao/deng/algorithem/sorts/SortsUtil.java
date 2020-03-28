@@ -2,6 +2,9 @@ package com.xiao.deng.algorithem.sorts;
 
 import java.util.List;
 
+/**
+ * @author xiao
+ */
 public class  SortsUtil {
    public static void print(List<?> toPrint) {
         toPrint.stream()
