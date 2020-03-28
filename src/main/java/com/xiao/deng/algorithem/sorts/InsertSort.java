@@ -23,8 +23,28 @@ package com.xiao.deng.algorithem.sorts;
  * 空间复杂度： O(1)
  * 稳定性：稳定
  */
-public class InsertSort {
-    public static void sort(int[] arr) {
+public class InsertSort implements SortAlgorithm {
+    @Override
+    public int[] sort(int[] arr) {
+        int len = arr.length;
+        int preIdx;
+        for (int i = 1; i < len; i++) {
+            preIdx = i - 1;
+            int cur = arr[i];
+            while (preIdx >= 0 && cur < arr[preIdx]) {
+                arr[preIdx + 1] = arr[preIdx];
+                preIdx--;
+            }
+            arr[preIdx + 1] = cur;
+        }
+
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = new int[]{4, 3, 38, 5};
+        arr = new InsertSort().sort(arr);
+        SortsUtil.print(arr);
 
     }
 }
