@@ -21,8 +21,9 @@ package com.xiao.deng.algorithem.sorts;
  * 空间复杂度： O(1)
  * 稳定性：稳定
  */
-public class BubbleSort {
-    public static void sort(int[] arr) {
+public class BubbleSort implements SortAlgorithm {
+    @Override
+    public int[] sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             boolean flag = true;
             for (int j = 0; j < arr.length - i - 1; j++) {
@@ -35,11 +36,12 @@ public class BubbleSort {
                 break;
             }
         }
+        return arr;
     }
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 4, 3, 2};
-        sort(arr);
+        arr = new BubbleSort().sort(arr);
         SortsUtil.print(arr);
     }
 }

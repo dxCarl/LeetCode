@@ -23,8 +23,9 @@ package com.xiao.deng.algorithem.sorts;
  * 空间复杂度： O(1)
  * 稳定性：不稳定
  */
-public class SelectionSort {
-    public static void sorts(int[] arr) {
+public class SelectionSort implements SortAlgorithm {
+    @Override
+    public int[] sort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int min = arr[i];
             int idx = i;
@@ -38,11 +39,12 @@ public class SelectionSort {
                 SortsUtil.exchange(arr, i, idx);
             }
         }
+        return arr;
     }
 
     public static void main(String[] args) {
         int[] arr = new int[]{4, 3, 38, 5};
-        SelectionSort.sorts(arr);
+        arr = new SelectionSort().sort(arr);
         SortsUtil.print(arr);
     }
 }
