@@ -42,9 +42,7 @@ public class InsertSort implements SortAlgorithm {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{4, 3, 38, 5};
-        arr = new InsertSort().sort(arr);
-        SortsUtil.print(arr);
+        new InsertSort().sortTest();
 
     }
 }

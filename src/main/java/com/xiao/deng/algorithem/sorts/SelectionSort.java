@@ -43,8 +43,6 @@ public class SelectionSort implements SortAlgorithm {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{4, 3, 38, 5};
-        arr = new SelectionSort().sort(arr);
-        SortsUtil.print(arr);
+        new SelectionSort().sortTest();
     }
 }

@@ -12,4 +12,14 @@ public interface SortAlgorithm {
      * @return
      */
     int[] sort(int[] unsorted);
+
+    /**
+     * sort test
+     */
+    default void sortTest() {
+        int[] arr = new int[]{4, 3, 38, 5};
+        arr = sort(arr);
+        SortsUtil.print(arr);
+
+    }
 }
