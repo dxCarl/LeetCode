@@ -7,8 +7,8 @@
 		<version>2.1.3.RELEASE</version>
 		<relativePath/>
 	</parent>
-    <groupId>com.weimob.tjpm</groupId>
-    <artifactId>LeetCode</artifactId>
+    <groupId>com.xiao.deng</groupId>
+    <artifactId>Practice</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>LeetCode Tapestry 5 Application</name>
 	<properties>

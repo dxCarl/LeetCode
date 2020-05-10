@@ -1,4 +1,4 @@
-package com.xiao.deng;
+package com.xiao.deng.concurrent_program;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Priority {
     private static volatile boolean notEnd = true;
 
     public static void main(String[] args) throws Exception {
-        List<Job> jobs = new ArrayList<Job>();
+        List<Job> jobs = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             int priority = i < 5 ? Thread.MIN_PRIORITY : Thread.MAX_PRIORITY;
             Job job = new Job(priority);

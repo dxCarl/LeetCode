@@ -1,4 +1,4 @@
-package com.xiao.deng;
+package com.xiao.deng.concurrent_program;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
