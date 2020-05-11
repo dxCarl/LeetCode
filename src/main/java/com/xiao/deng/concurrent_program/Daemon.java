@@ -12,7 +12,7 @@ public class Daemon {
         @Override
         public void run() {
             try {
-                SleepUtil.second(10);
+                SleepUtils.second(10);
             } finally {
                 System.out.println("daemon finally run.");
             }
