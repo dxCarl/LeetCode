@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -29,8 +30,11 @@ public class M {
 //        }
 //        System.out.println("fineshed, thread name : " + Thread.currentThread().getName());
 
-        long w = 5L;
-        long m = -1L ^ (-1L << w);
-        System.out.println( m);
+//        long w = 5L;
+//        long m = -1L ^ (-1L << w);
+//        System.out.println( m);
+        HashMap<Object, Object> objectObjectHashMap = new HashMap<>(3);
+        objectObjectHashMap.put(1, 1);
+        System.out.println(objectObjectHashMap.isEmpty());
     }
 }
