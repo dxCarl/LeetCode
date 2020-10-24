@@ -3,6 +3,7 @@ package com.xiao.deng.base;
 import org.apache.commons.lang.StringUtils;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +17,13 @@ public class M {
         LockUtil util = LockUtil.getInstance();
         List<Long> list1 = Arrays.asList(new Long[]{1L, 2L,3L,4L,5L,6L,7L, 8L,9L,10L});
         List<Long> list2 = Arrays.asList(new Long[]{6L,7L, 8L,9L,10L,11L,12L,13L,14L,15L});
+
+        List<Integer> list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.removeIf(item -> item > 2);
 
         List[] lists = {list1};
         StringUtils.join(lists, ",");
@@ -36,5 +44,11 @@ public class M {
         HashMap<Object, Object> objectObjectHashMap = new HashMap<>(3);
         objectObjectHashMap.put(1, 1);
         System.out.println(objectObjectHashMap.isEmpty());
+
+        if (list1.size() > 1) {
+            System.out.println(1);
+        } else if (list1.size() > 2) {
+            System.out.println(2);
+        }
     }
 }
