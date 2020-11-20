@@ -6,6 +6,9 @@ import sun.util.calendar.LocalGregorianCalendar;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author xiao
@@ -38,6 +41,11 @@ public class M {
         String yearMonth = format.format(startTime);
         String yearStr = yearMonth.substring(0, 4);
         String monthStr = yearMonth.substring(4);
+
+        String list = "";
+
+        List<Long> collect = Stream.of(list.split(",")).map(String::trim).map(Long::valueOf).collect(Collectors.toList());
+        System.out.println(collect.size());
     }
 
 

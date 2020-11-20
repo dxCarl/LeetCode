@@ -41,14 +41,7 @@ public class M {
 //        long w = 5L;
 //        long m = -1L ^ (-1L << w);
 //        System.out.println( m);
-        HashMap<Object, Object> objectObjectHashMap = new HashMap<>(3);
-        objectObjectHashMap.put(1, 1);
-        System.out.println(objectObjectHashMap.isEmpty());
 
-        if (list1.size() > 1) {
-            System.out.println(1);
-        } else if (list1.size() > 2) {
-            System.out.println(2);
-        }
+
     }
 }
