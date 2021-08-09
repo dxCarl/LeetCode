@@ -1,6 +1,5 @@
 package com.xiao.deng.leetcode.count_charactoer;
 
-import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -73,7 +72,7 @@ public class Solution {
 
 
     public static void main(String[] args) {
-        String[] words = new String[]{"hello","world","leetcode"};
+        String[] words = new String[]{"hello", "world", "leetcode"};
         String chars = "";
         int count = new Solution().countCharacters(words, chars);
         System.out.println(count);

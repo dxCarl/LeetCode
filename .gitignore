@@ -2,3 +2,4 @@
 .idea/
 /src/main/java/com/xiao/deng/concurrent_program/Synchronized.class
 *.class
+!/.idea/
