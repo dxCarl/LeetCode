@@ -27,7 +27,7 @@
         <yasson-version>1.0.1</yasson-version>
         <druid-version>1.1.23</druid-version>
         <guava.version>20.0</guava.version>
-        <lombok.version>1.18.8</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
         <kotlin.version>1.4.10</kotlin.version>
     </properties>
     <repositories>
@@ -175,6 +175,41 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.googlecode.aviator</groupId>
+            <artifactId>aviator</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+
+        <!--easy rules核心库-->
+        <dependency>
+            <groupId>org.jeasy</groupId>
+            <artifactId>easy-rules-core</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+<!--        &lt;!&ndash;规则定义文件格式，支持json,yaml等&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.jeasy</groupId>-->
+<!--            <artifactId>easy-rules-support</artifactId>-->
+<!--            <version>3.0.1</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash;支持mvel规则语法库&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.jeasy</groupId>-->
+<!--            <artifactId>easy-rules-mvel</artifactId>-->
+<!--            <version>3.0.1</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+        </dependency>
+
 
 
     </dependencies>

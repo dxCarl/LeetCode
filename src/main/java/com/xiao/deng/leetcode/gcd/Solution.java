@@ -1,7 +1,5 @@
 package com.xiao.deng.leetcode.gcd;
 
-import com.sun.deploy.util.StringUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 

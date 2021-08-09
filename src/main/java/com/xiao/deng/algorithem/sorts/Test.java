@@ -1,7 +1,4 @@
 package com.xiao.deng.algorithem.sorts;
-
-import com.sun.istack.internal.NotNull;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -24,7 +21,7 @@ public class Test {
 
     }
 
-    public int get(@NotNull Integer a) {
+    public int get(Integer a) {
         try {
             return a;
         } finally {

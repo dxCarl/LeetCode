@@ -41,11 +41,11 @@ public class LockUtil {
             if (lock) {
                 successQueue.add(id);
             } else {
-                log.error("try lock key failed , lock key :{}, type: {}", id, type);
+//                log.error("try lock key failed , lock key :{}, type: {}", id, type);
             }
         });
-        log.info("batch try lock total count: {}, success count:{}, success keys: {}", keys.size(), successQueue.size(),
-                StringUtils.join(new List[]{successQueue}, ","));
+//        log.info("batch try lock total count: {}, success count:{}, success keys: {}", keys.size(), successQueue.size(),
+//                StringUtils.join(new List[]{successQueue}, ","));
         return successQueue;
     }
 
@@ -64,16 +64,16 @@ public class LockUtil {
         try {
             boolean res = null != lock ? lock.tryLock(time, unit) : false;
             if (res) {
-                log.info("current thread name: {}, try lock success, lock key: {}, thread name: {}",
-                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
+//                log.info("current thread name: {}, try lock success, lock key: {}, thread name: {}",
+//                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
             } else {
-                log.warn("current thread name: {}, try lock failed, lock key: {}, thread name: {}",
-                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
+//                log.warn("current thread name: {}, try lock failed, lock key: {}, thread name: {}",
+//                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
             }
             return res;
         } catch (InterruptedException e) {
-            log.warn("current thread name: {}, try lock error, lock key : {}, err msg : {}",
-                    Thread.currentThread().getName(), lockKey.toString(), e.getMessage());
+//            log.warn("current thread name: {}, try lock error, lock key : {}, err msg : {}",
+//                    Thread.currentThread().getName(), lockKey.toString(), e.getMessage());
             return false;
         }
     }
@@ -87,11 +87,11 @@ public class LockUtil {
         if (null != lock) {
             try {
                 lock.unlock();
-                log.info("current thread name: {}, unlock success, lock key: {}, thread name: {}",
-                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
+//                log.info("current thread name: {}, unlock success, lock key: {}, thread name: {}",
+//                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
             } catch (Exception e) {
-                log.warn("current thread name: {}, unlock error, lock key: {}, thread name: {}",
-                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
+//                log.warn("current thread name: {}, unlock error, lock key: {}, thread name: {}",
+//                        Thread.currentThread().getName(), lockKey.toString(), Thread.currentThread().getName());
             }
             mutexLockCache.invalidate(lockKey);
         }
@@ -106,17 +106,17 @@ public class LockUtil {
         try {
             return mutexLockCache.get(lockKey, () -> new ReentrantReadWriteLock().writeLock());
         } catch (ExecutionException e) {
-            log.warn("current thread name: {}, get lock error, lock key:{}, err msg: {}",
-                    Thread.currentThread().getName(), lockKey.toString(), e);
+//            log.warn("current thread name: {}, get lock error, lock key:{}, err msg: {}",
+//                    Thread.currentThread().getName(), lockKey.toString(), e);
         }
         ReentrantReadWriteLock.WriteLock lock = mutexLockCache.getIfPresent(lockKey);
         if (null == lock) {
-            log.warn("current thread name: {}, get lock error, lock is null, lock key:{}",
-                    Thread.currentThread().getName(), lockKey.toString());
+//            log.warn("current thread name: {}, get lock error, lock is null, lock key:{}",
+//                    Thread.currentThread().getName(), lockKey.toString());
             return null;
         }
-        log.warn("current thread name: {}, get lock success,lock key:{}, lock:{}",
-                Thread.currentThread().getName(), lockKey.toString(), lock);
+//        log.warn("current thread name: {}, get lock success,lock key:{}, lock:{}",
+//                Thread.currentThread().getName(), lockKey.toString(), lock);
         return lock;
     }
 

@@ -39,11 +39,11 @@ public class BatchLock<T> {
             if (lock) {
                 successQueue.add(id);
             } else {
-                log.error("try lock key failed , lock key :{}, type: {}", id, type);
+//                log.error("try lock key failed , lock key :{}, type: {}", id, type);
             }
         });
-        log.info("batch try lock total count: {}, success count:{}, success keys: {}", keys.size(), successQueue.size(),
-                StringUtils.join(successQueue, ","));
+//        log.info("batch try lock total count: {}, success count:{}, success keys: {}", keys.size(), successQueue.size(),
+//                StringUtils.join(successQueue, ","));
         return successQueue;
     }
 
@@ -60,9 +60,9 @@ public class BatchLock<T> {
             }
             boolean res = null != lock ? lock.tryLock() : false;
             if (res) {
-                log.info("try lock success, lock key: {}", lockKey.toString());
+//                log.info("try lock success, lock key: {}", lockKey.toString());
             } else {
-                log.warn("try lock failed, lock key: {}", lockKey.toString());
+//                log.warn("try lock failed, lock key: {}", lockKey.toString());
             }
             return res;
         }
@@ -119,9 +119,9 @@ public class BatchLock<T> {
             if (null != lock) {
                 try {
                     lock.unlock();
-                    log.info("unlock success, lock key: {}", lockKey);
+//                    log.info("unlock success, lock key: {}", lockKey);
                 } catch (Exception e) {
-                    log.warn("unlock error, lock key: {},err msg: ", lockKey, e);
+//                    log.warn("unlock error, lock key: {},err msg: ", lockKey, e);
                 } finally {
                     mutexLockMap.remove(lockKey);
                 }

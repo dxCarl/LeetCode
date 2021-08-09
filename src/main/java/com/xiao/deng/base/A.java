@@ -29,12 +29,15 @@ public class A implements Runnable{
      *
      * @see Thread#run()
      */
-    @SneakyThrows
     @Override
     public void run() {
         List<Long> success = util.defaultBatchTryLock(list, "t");
         System.out.println("A lock success :" + success.size());
-        Thread.sleep(5000);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         util.defaultBatchUnlock(success, "t");
     }
 }

@@ -1,6 +1,5 @@
 package com.xiao.deng.leetcode;
 
-import static com.sun.xml.internal.fastinfoset.util.ValueArray.MAXIMUM_CAPACITY;
 
 public class TwoNumSum {
     public static void main(String[] args) {
@@ -11,7 +10,7 @@ public class TwoNumSum {
         n |= n >>> 4;
         n |= n >>> 8;
         n |= n >>> 16;
-        int rs = (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+        int rs = (n < 0) ? 1 : (n >= 10) ? 10 : n + 1;
         System.out.println(rs);
 
     }
