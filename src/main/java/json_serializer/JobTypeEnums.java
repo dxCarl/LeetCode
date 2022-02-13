@@ -1,4 +1,4 @@
-package com.xiao.deng;
+package json_serializer;
 
 //
 // Source code recreated from a .class file by IntelliJ IDEA
@@ -7,6 +7,7 @@ package com.xiao.deng;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.google.common.base.Preconditions;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;

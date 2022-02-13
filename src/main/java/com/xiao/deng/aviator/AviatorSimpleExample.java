@@ -6,6 +6,7 @@ import com.googlecode.aviator.Expression;
 import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,9 +60,13 @@ public class AviatorSimpleExample {
         result = AviatorEvaluator.execute("sort(list)", env);
         System.out.println(result);  // [3, 10, 20]
 
-        String exp = "(include(tags,'e1') || include(tags,'e3')) && host = 'e1'";
-//        compiledExp = AviatorEvaluator.compile(exp, true);
-//        compiledExp.execute(env);
+//        String exp = "(include(tags,'e1') || include(tags,'e3')) && host = 'e1'";
+        env.put("creater_name_list", Arrays.asList("'liulei01'", "'zhaokongming'"));
+        env.put("creater_name", "zhaokongming");
+        String exp = "include(creater_name_list,creater_name)";
+        compiledExp = AviatorEvaluator.compile(exp, true);
+        compiledExp.execute(env);
+        Object execute1 = AviatorEvaluator.execute(exp, env);
 
         Object execute = AviatorEvaluator.execute("projectId == nil", env);
 
